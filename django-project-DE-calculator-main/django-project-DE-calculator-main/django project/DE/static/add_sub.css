@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+.nav{
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    height: 6vh;
+    width: 100vw;
+    text-align: center;
+    color: antiquewhite;
+    background-color:black;
+}
+
+/* form{
+   color: white;
+
+} */
+input{
+
+width: 20vw;
+height: 5vh;
+
+}
+.rules h2{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+}
+.rules ol {
+    font-size: 1.5vw;
+}
+
+.example {
+    font-size: 1.5vw;
+}

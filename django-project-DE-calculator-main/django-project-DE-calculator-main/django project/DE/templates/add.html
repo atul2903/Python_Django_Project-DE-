@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{%load static%}
+<link rel='stylesheet' href={%static 'add.css'%}
+<body>
+    <nav class='nav'>
+        <h1 class='nav'> Binary Addition</h1>
+    </nav>
+    <br>
+
+    <form method="post" align='center'>
+        {% csrf_token %}
+        {% comment %} <label>Enter in  Binary</label><br> {% endcomment %}
+        <label>Enter first Binary Number </label><br>
+        <input type="text" name="num1" placeholder='enter first ' class="form-control"/><br>
+        <label>Enter Second Binary Number </label><br>
+        <input type="text" name="num2" placeholder='enter second ' class="form-control"/><br>
+        <button type="submit">Calculate</button><br>
+        <label>Output</label><br>
+        <input type="text" value="{{add}}" name="result" class="form-control"/><br>
+
+    </form><br>
+    <div class='rules'>
+        <h2>Rules Required for Performing the Binary Addition :
+        </h2>
+        <ol>
+            <li> 1. 0 + 0 = 0</li>
+            <li> 2. 0 + 1 = 1</li>
+            <li> 3. 1 + 0 = 1 </li>
+            <li> 4. 1 + 1 =10 (here 1 is carried over to the next bit)</li>
+        </ol> 
+
+        
+    </div>
+    <br>
+    <div class='example'>
+        
+        <b>Example </b>: 10001 + 11101
+<br>
+    <b>Solution</b>:
+
+                <br>
+
+      1 0 0 0 1
+      <br>
+
+1 1 1 0 1
+<br>
+(+)<br>
+———————–<br>
+
+     1 0 1 1 1 0
+    </div>
+</body>
+</html>
+
+    

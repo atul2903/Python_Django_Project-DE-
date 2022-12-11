@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DE Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <link rel='stylesheet' href={% static 'bit.css'%}
+  <body>
+    <h1>7 Bit Hamming Code</h1><br>
+
+    The hamming code technique, which is an error-detection and error-correction technique, was proposed by R.W. Hamming. Whenever a data packet is transmitted over a network, there are possibilities that the data bits may get lost or damaged during transmission.<br>
+    <form method="post" align='center'>
+        {% csrf_token %}<br>
+        <h1>This is 7-bit even parity encoding</h1>
+        <label align='center'><b>ENTER THE ENCODED INPUT</b></label><br>
+        <input type="text" name="num1" placeholder='enter binary code...' class="form-control"/><br>
+        <button type="submit"><b>Calculate</b></button><br>
+        <label><b>Output</b></label><br>
+        <input type="text" value="{{code}}" name="result" class="form-control"/><br>
+       
+
+    </form>
+    <div class='center'>
+     {% comment %} <img src= alt='not found' align='center'> {% endcomment %}
+     <img src='https://s3.ap-south-1.amazonaws.com/s3.studytonight.com/curious/uploads/pictures/1580895505-70265.png' alt="Paris" class="center">
+    </div>
+    
+    <div class='steps'>
+      
+      <ol>
+        <li>For checking parity bit P1, use check one and skip one method, which means, starting from P1 and then skip P2, take D3 then skip P4 then take D5, and then skip D6 and take D7, this way we will have the following bits,As we can observe the total number of bits are odd so we will write the value of parity bit as P1 = 1. This means error is there.</li>
+        <li>Check for P2 but while checking for P2, we will use check two and skip two method, which will give us the following data bits. But remember since we are checking for P2, so we have to start our count from P2 (P1 should not be considered).As we can observe that the number of 1's are even, then we will write the value of P2 = 0. This means there is no error.</li>
+        <li> Check for P4 but while checking for P4, we will use check four and skip four method, which will give us the following data bits. But remember since we are checking for P4, so we have started our count from P4(P1 & P2 should not be considered).As we can observe that the number of 1's are odd, then we will write the value of P4 = 1. This means the error is there.
+
+          So, from the above parity analysis, P1 & P4 are not equal to 0, so we can clearly say that the received hamming code has errors.</li>
+      </ol>
+    </div>
+  </body>
+</html>
+    

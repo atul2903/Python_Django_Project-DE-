@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color:whitesmoke;
+}
+h1{
+    color: rgb(196, 194, 107);
+    background-color:black;
+    text-align: center;
+}
+label{
+    text-align: center;
+    color:black;
+}
+button{
+    color: black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

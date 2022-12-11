@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMAP</title>
+    {% load static %}
+</head>
+<link rel='stylesheet' href={%static 'kmap.css' %}>
+<body>
+    {% comment %} <div class='img'>
+    <img src='https://d585tldpucybw.cloudfront.net/sfimages/default-source/professional-services/ui-ux-modernization-hero.png?sfvrsn=d92d0367_3' alt='not found'>
+    </div> {% endcomment %}
+    <h1 align='center'>This is KMAP Page.</h1>
+    <h2>Defination of K-Map :-</h2><br>
+    <div class='def'>
+        
+        A Karnaugh map (K-map) is a visual method used to simplify the algebraic expressions in Boolean functions without having to resort to complex theorems or equation manipulations. A K-map can be thought of as a special version of a truth table that makes it easier to map out parameter values and arrive at a simplified Boolean expression.
+    </div><br>
+    <h2>
+    To Calculate K-Map:-
+    </h2>
+    <div class ='form'>
+        
+    <form method="POST" align='center'>
+        <label>Enter min terms here :</label><br>
+    {% csrf_token %}
+    <input type="text" name="min-terms"><br>
+    <label>Enter don't cares here:</label><br>
+    <input type="text" name="dont-cares"><br><br>
+    <button type="submit">Calculate</button><br>
+
+    
+    <label>Output</label><br>
+    <input type="text" value="{{kmap}}" name="kmap" class="form-control"/><br>
+    </form>
+
+</div>
+<br>
+<h2>Solving an Expression Using K-Map :- </h2>
+<div class='steps' >
+    Here are the steps that are used to solve an expression using the K-map method:
+    
+    <br>
+
+<ol start='1' class='steps'>
+
+<li> 1.Select a K-map according to the total number of variables.
+</li>
+<li> 2.Identify maxterms or minterms as given in the problem.</li>
+
+<li> 3.For SOP, put the 1’s in the blocks of the K-map with respect to the minterms (elsewhere 0’s).</li>
+
+<li> 4.For POS, putting 0’s in the blocks of the K-map with respect to the maxterms (elsewhere 1’s).</li>
+
+<li> 5.Making rectangular groups that contain the total terms in the power of two, such as 2,4,8 ..(except 1) and trying to cover as many numbers of elements as we can in a single group.
+</li>
+<li> 6.From the groups that have been created in step 5, find the product terms and then sum them up for the SOP form.</li>
+    </ol>
+</div>
+</body>
+</html>
